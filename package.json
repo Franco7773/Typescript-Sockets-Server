@@ -1,0 +1,23 @@
+{
+  "name": "socket-server",
+  "version": "1.0.0",
+  "description": "Server-Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon dist/"
+  },
+  "author": "D'Onofrio Gianfranco",
+  "license": "ISC",
+  "dependencies": {
+    "@types/morgan": "^1.7.37",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.1",
+    "morgan": "^1.9.1"
+  }
+}
