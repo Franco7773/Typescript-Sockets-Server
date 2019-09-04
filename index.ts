@@ -1,12 +1,13 @@
 import Server from './classes/server';
 import router from './routes/router';
 
+
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import morgan from 'morgan';
 
 
-const server = new Server();
+const server = Server.instance;
 
 // BoyParser
 server.app.use( bodyParser.urlencoded({ extended: true }));
