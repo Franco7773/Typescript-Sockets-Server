@@ -3,7 +3,12 @@ import http from 'http';
 import socketIO from 'socket.io';
 import * as socket from '../sockets/sockets';
 
+import { UsuariosLista } from './usuarios-lista';
+
 import { GLOBAL_PORT as PORT } from '../global/environment';
+
+
+export const usuariosConectados = new UsuariosLista();
 
 export default class Server {
   
@@ -38,8 +43,10 @@ export default class Server {
     console.log('Escuchando sockets');;
     
     this.io.on('connection', cliente => {
-      console.log('Nuevo cliente conectado');
+      console.log('Nuevo cliente conectado con ID: ', cliente.id);
+      socket.conectarCliente( cliente )
 
+      socket.configurarUsuario( cliente, this.io );
       socket.message( cliente, this.io );
       socket.desconectar( cliente );
     });
