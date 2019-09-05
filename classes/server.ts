@@ -48,7 +48,8 @@ export default class Server {
 
       socket.configurarUsuario( cliente, this.io );
       socket.message( cliente, this.io );
-      socket.desconectar( cliente );
+      socket.obtenerUsuarios( cliente, this.io );
+      socket.desconectar( cliente, this.io );
     });
   }
 }
